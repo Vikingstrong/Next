@@ -10,6 +10,9 @@ export const todosApi = createApi({
         getTodos: build.query<IRequestTodos, string>({
             query: () => 'to-dos'
         }),
+        getTaskById: build.query<IRequestTodos, number>({
+            query: (id) => (`to-dos/${id}`)
+        }),
         delTask: build.mutation<IRequestTodos, string>({
             query: (id) => ({
                 url: `to-dos?id=${id}`,
@@ -50,6 +53,12 @@ export const todosApi = createApi({
                     body: formData    
                 }
             }
+        }),
+        switchStatus: build.mutation<IRequestTodos, number>({
+            query: (id) => ({
+                url: `../completed?id=${id}`,
+                method: 'PUT'
+            })
         })
     })
     
@@ -57,9 +66,11 @@ export const todosApi = createApi({
 
 export const { 
     useGetTodosQuery,
+    useGetTaskByIdQuery,
     useDelTaskMutation,
     useAddTaskMutation,
     useEditTaskMutation,
     useDelImgMutation,
     usePostImgMutation,
+    useSwitchStatusMutation,
 } = todosApi

@@ -125,6 +125,9 @@ export default function Home() {
                 className="bg-orange-500 p-2 text-white font-bold rounded-sm hover:rounded-lg hover:bg-orange-800 transition-all hover:-translate-y-0.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >Edit
               </button>
+              <Link className="bg-orange-600 text-center p-2 text-white font-bold rounded-sm hover:rounded-lg hover:bg-orange-800 transition-all hover:-translate-y-0.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed" href={`info/${el.id}`}>
+              Info
+              </Link>
             </div>
           ))}
         </div>
