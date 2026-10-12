@@ -104,7 +104,7 @@ export default function Home() {
               <div className="flex gap-3">
                 {el.images.map(img => (
                   <div className="flex flex-col gap-3" key={img.id}>
-                    <img src={`https://to-dos-api.softclub.tj/images/${img.imageName}`}></img>
+                    <img className="w-100 h-50 object-cover" src={`https://to-dos-api.softclub.tj/images/${img.imageName}`}></img>
                     <button
                       onClick={() => handleDelImg(img.id)}
                       className="bg-red-500 p-2 text-white font-bold rounded-sm hover:rounded-lg hover:bg-red-800 transition-all hover:-translate-y-0.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">Delete Image
